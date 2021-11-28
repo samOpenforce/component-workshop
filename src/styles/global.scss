@@ -1,10 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~normalize.css";
 @import "material-theme";
+@import "spacing";
+
 html,
 body {
   height: 100%;
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+}
+
+form.form-reset {
+  margin: 0;
+  padding: 32px 24px;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+div.screen-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex: 1;
+}
+
+div.control-row {
+  width: 100%;
+  min-height: 128px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid whitesmoke;
+}
+
+div.control-container {
+  min-width: 300px;
+  display: flex;
+  padding: 16px;
+  & mat-form-field {
+    width: 100%;
+  }
+}
+
+div.control-display-errors {
+  border-left: 1px solid whitesmoke;
+  display: flex;
+  min-width: 300px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8px 16px;
+  & mat-form-field {
+    width: 100%;
+  }
+}
+
+div.button-container {
+  min-width: 300px;
+  & button.mat-flat-button {
+    width: 100%;
+    height: 48px;
+  }
+}
+
+button.mat-flat-button.mat-primary {
+  max-height: 48px;
+  min-width: 300px;
 }
