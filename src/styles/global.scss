@@ -13,62 +13,71 @@ body {
   font-size: 16px;
 }
 
+div.header-container {
+  height: 64px;
+}
+
 form.form-reset {
   margin: 0;
   padding: 32px 24px;
   display: flex;
   flex-grow: 1;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  max-width: 1440px;
 }
 
 div.screen-container {
-  height: 100%;
+  height: calc(100% - 64px);
   width: 100%;
   display: flex;
+  flex-direction: column;
   flex: 1;
-}
-
-div.control-row {
-  width: 100%;
-  min-height: 128px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  border: 1px solid whitesmoke;
 }
 
 div.control-container {
   min-width: 300px;
+  max-width: 300px;
   display: flex;
-  padding: 16px;
   & mat-form-field {
     width: 100%;
   }
 }
 
 div.control-display-errors {
-  border-left: 1px solid whitesmoke;
   display: flex;
   min-width: 300px;
   flex-direction: column;
   justify-content: center;
-  padding: 8px 16px;
+  align-items: center;
   & mat-form-field {
     width: 100%;
-  }
-}
-
-div.button-container {
-  min-width: 300px;
-  & button.mat-flat-button {
-    width: 100%;
-    height: 48px;
   }
 }
 
 button.mat-flat-button.mat-primary {
   max-height: 48px;
   min-width: 300px;
+}
+
+div.workshop-row {
+  display: flex;
+  padding: 16px 8px;
+  gap: 24px;
+  & div.col {
+    flex: 1;
+    flex-grow: 1;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  div.workshop-row {
+    flex-direction: column;
+  }
+  div.control-display-errors {
+    align-items: flex-start;
+  }
+}
+
+pre {
+  margin: 0;
 }

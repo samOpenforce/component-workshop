@@ -18,7 +18,7 @@ export class TextInputComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      name: [null, [Validators.required]],
+      name: [null, [Validators.required, Validators.minLength(4)]],
       email: [null, [Validators.required]],
     });
   }

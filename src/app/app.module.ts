@@ -17,6 +17,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { TextInputComponent } from './screens/text-input/text-input.component';
+import { NumberInputComponent } from './screens/number-input/number-input.component';
+import { SelectComponent } from './screens/select/select.component';
+import { MultiselectComponent } from './screens/multiselect/multiselect.component';
+import { AutocompleteComponent } from './screens/autocomplete/autocomplete.component';
+import { MatListModule } from '@angular/material/list';
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -29,6 +34,10 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     HomeComponent,
     HeaderComponent,
     TextInputComponent,
+    NumberInputComponent,
+    SelectComponent,
+    MultiselectComponent,
+    AutocompleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +57,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

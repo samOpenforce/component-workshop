@@ -1,56 +1,64 @@
 <div class="screen-container">
   <form [formGroup]="loginForm" novalidate class="form-reset">
-    <div class="control-row">
-      <div class="control-container">
-        <mat-form-field floatLabel="always">
-          <mat-label>Name</mat-label>
-          <input
-            matInput
-            formControlName="name"
-            placeholder="Enter name"
-            data-test="login-name-input"
-            autocomplete="off"
-            autocapitalize="off"
-          />
-          <mat-error>hello there</mat-error>
-        </mat-form-field>
+    <div class="workshop-row mb-24">
+      <div class="col info mat-h3">
+        Text input using Angulars standard validators
       </div>
-      <div class="control-display-errors">
-        <pre>errors: {{ getControl.name?.errors | json }}</pre>
+      <div class="control">
+        <div class="control-container">
+          <mat-form-field floatLabel="always">
+            <mat-label>Name</mat-label>
+            <input
+              matInput
+              formControlName="name"
+              placeholder="Enter name"
+              data-test="login-name-input"
+              autocomplete="off"
+              autocapitalize="off"
+            />
+            <mat-error>hello there</mat-error>
+          </mat-form-field>
+        </div>
       </div>
-    </div>
-    <div class="control-row">
-      <div class="control-container mt-24">
-        <mat-form-field floatLabel="always">
-          <mat-label>Email</mat-label>
-          <input
-            matInput
-            formControlName="email"
-            placeholder="Enter email address"
-            data-test="login-email-input"
-            autocomplete="off"
-            autocapitalize="off"
-          />
-          <mat-error>hello there</mat-error>
-        </mat-form-field>
-      </div>
-      <div class="control-display-errors">
-        <pre>errors: {{ getControl.email?.errors | json }}</pre>
+      <div class="col control-values">
+        <div class="control-display-errors">
+          <pre>errors: {{ getControl.name?.errors | json }}</pre>
+        </div>
       </div>
     </div>
-    <div class="control-row">
-      <div class="control-container mt-24">
-        <button mat-flat-button color="primary">submit</button>
+    <mat-divider inset="false"></mat-divider>
+    <div class="workshop-row mt-24">
+      <div class="col info mat-h3">Text input using custom validators</div>
+      <div class="control">
+        <div class="control-container">
+          <mat-form-field floatLabel="always">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              formControlName="email"
+              placeholder="Enter email address"
+              data-test="login-email-input"
+              autocomplete="off"
+              autocapitalize="off"
+            />
+            <mat-error>hello there</mat-error>
+          </mat-form-field>
+        </div>
       </div>
-      <div class="control-display-errors">
-        <pre>valid?: {{ loginForm.valid | json }}</pre>
-        <pre>invalid?: {{ loginForm.invalid | json }}</pre>
-        <pre>pristine?: {{ loginForm.pristine | json }}</pre>
+      <div class="col control-values">
+        <div class="control-display-errors">
+          <pre>errors: {{ getControl.email?.errors | json }}</pre>
+        </div>
       </div>
+    </div>
+    <div class="workshop-row mb-24">
+      <div class="col info mat-h3"></div>
+      <div class="control">
+        <div class="control-container">
+          <button mat-flat-button color="primary">submit</button>
+        </div>
+      </div>
+      <div class="col control-values"></div>
     </div>
   </form>
-
-  <div></div>
-
-  <div></div>
 </div>

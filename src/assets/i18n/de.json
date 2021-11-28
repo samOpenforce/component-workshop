@@ -1,5 +1,12 @@
 {
   "common": {
-    "hello": "Guten Tag"
+    "hello": "Guten Tag",
+    "name": "Name",
+    "email": "E-mail addresse",
+    "yes": "Ja",
+    "no": "Nein",
+    "continue": "Weiter",
+    "back": "Züruck",
+    "submit": "Submit"
   }
 }

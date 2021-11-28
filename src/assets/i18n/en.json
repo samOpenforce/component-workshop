@@ -1,5 +1,12 @@
 {
   "common": {
-    "hello": "Good day to you"
+    "hello": "Good day to you",
+    "name": "Name",
+    "email": "Email address",
+    "yes": "Yes",
+    "no": "No",
+    "continue": "Continue",
+    "back": "Back",
+    "submit": "Submit"
   }
 }
