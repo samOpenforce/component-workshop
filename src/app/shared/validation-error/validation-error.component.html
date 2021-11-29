@@ -1,0 +1,15 @@
+<div *ngIf="hasError('required')" [attr.data-test]="testSelector">
+  {{ "validators.required" | translate }}
+</div>
+
+<div *ngIf="hasError('email')" [attr.data-test]="testSelector">
+  {{ "validators.email-address" | translate }}
+</div>
+
+<div *ngIf="hasError('minlength')" [attr.data-test]="testSelector">
+  {{ "validators.min-length" | translate }}
+</div>
+
+<div *ngIf="hasError('stringMatch')" [attr.data-test]="testSelector">
+  {{ "validators.string-match" | translate }}
+</div>

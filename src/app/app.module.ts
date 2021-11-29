@@ -22,6 +22,7 @@ import { SelectComponent } from './screens/select/select.component';
 import { MultiselectComponent } from './screens/multiselect/multiselect.component';
 import { AutocompleteComponent } from './screens/autocomplete/autocomplete.component';
 import { MatListModule } from '@angular/material/list';
+import { ValidationErrorComponent } from './shared/validation-error/validation-error.component';
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -38,6 +39,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     SelectComponent,
     MultiselectComponent,
     AutocompleteComponent,
+    ValidationErrorComponent,
   ],
   imports: [
     BrowserModule,

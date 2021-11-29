@@ -6,6 +6,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { stringMatch } from '../../shared/WorkshopValidators';
 
 @Component({
   selector: 'app-text-input',
@@ -18,8 +19,11 @@ export class TextInputComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      name: [null, [Validators.required, Validators.minLength(4)]],
-      email: [null, [Validators.required]],
+      name: [null, [Validators.minLength(4), Validators.required]],
+      email: [
+        null,
+        [Validators.email, stringMatch('tree@forest'), Validators.required],
+      ],
     });
   }
 

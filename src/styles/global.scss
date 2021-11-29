@@ -43,15 +43,19 @@ div.control-container {
   }
 }
 
-div.control-display-errors {
+div.values-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+div.errors-object {
   display: flex;
   min-width: 300px;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  & mat-form-field {
-    width: 100%;
-  }
+  align-items: flex-start;
+  max-width: 300px;
 }
 
 button.mat-flat-button.mat-primary {
@@ -63,7 +67,8 @@ div.workshop-row {
   display: flex;
   padding: 16px 8px;
   gap: 24px;
-  & div.col {
+  & div.info-col,
+  div.values-col {
     flex: 1;
     flex-grow: 1;
   }
@@ -80,4 +85,13 @@ div.workshop-row {
 
 pre {
   margin: 0;
+}
+
+a.workshop-primary {
+  color: orange;
+  font-weight: 700;
+  text-decoration: none;
+  &:visited {
+    color: orange;
+  }
 }
