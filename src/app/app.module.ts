@@ -19,8 +19,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { TextInputComponent } from './screens/text-input/text-input.component';
 import { NumberInputComponent } from './screens/number-input/number-input.component';
 import { SelectComponent } from './screens/select/select.component';
-import { MultiselectComponent } from './screens/multiselect/multiselect.component';
-import { AutocompleteComponent } from './screens/autocomplete/autocomplete.component';
 import { MatListModule } from '@angular/material/list';
 import { ValidationErrorComponent } from './shared/validation-error/validation-error.component';
 
@@ -37,8 +35,6 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     TextInputComponent,
     NumberInputComponent,
     SelectComponent,
-    MultiselectComponent,
-    AutocompleteComponent,
     ValidationErrorComponent,
   ],
   imports: [
