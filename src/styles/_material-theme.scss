@@ -2,76 +2,29 @@
 
 @include mat.core();
 
-$app-green: (
-  50: #e0ede6,
-  100: #b3d3bf,
-  200: #80b595,
-  300: #4d976b,
-  400: #26814b,
-  500: #006b2b,
-  600: #006326,
-  700: #005820,
-  800: #004e1a,
-  900: #003c10,
-  A100: #72ff88,
-  A200: #3fff5d,
-  A400: #0cff33,
-  A700: #00f126,
-  contrast: (
-    50: #000000,
-    100: #000000,
-    200: #000000,
-    300: #ffffff,
-    400: #ffffff,
-    500: #ffffff,
-    600: #ffffff,
-    700: #ffffff,
-    800: #ffffff,
-    900: #ffffff,
-    A100: #000000,
-    A200: #000000,
-    A400: #000000,
-    A700: #000000,
-  ),
-);
+// TODO typography
+// TODO custom palettes
 
-$app-red: (
-  50: #f3e5e4,
-  100: #e2bfbb,
-  200: #ce948d,
-  300: #ba695f,
-  400: #ac483d,
-  500: #9d281b,
-  600: #952418,
-  700: #8b1e14,
-  800: #811810,
-  900: #6f0f08,
-  A100: #ffa4a0,
-  A200: #ff736d,
-  A400: #ff423a,
-  A700: #ff2a20,
-  contrast: (
-    50: #000000,
-    100: #000000,
-    200: #000000,
-    300: #000000,
-    400: #ffffff,
-    500: #ffffff,
-    600: #ffffff,
-    700: #ffffff,
-    800: #ffffff,
-    900: #ffffff,
-    A100: #000000,
-    A200: #000000,
-    A400: #ffffff,
-    A700: #ffffff,
-  ),
-);
-
-$app-primary: mat.define-palette($app-green, 500, 100, 800);
+// Light theme
+$app-primary: mat.define-palette(mat.$green-palette, 500, 100, 800);
 $app-accent: mat.define-palette(mat.$orange-palette, 700, 100, 800);
-$app-warn: mat.define-palette($app-red, 500);
+$app-warn: mat.define-palette(mat.$red-palette, 500, 500, 500);
 
 $app-light-theme: mat.define-light-theme($app-primary, $app-accent, $app-warn);
 
 @include mat.all-component-themes($app-light-theme);
+
+// Dark theme
+$app-dark-primary: mat.define-palette(mat.$green-palette, 500, 100, 800);
+$app-dark-accent: mat.define-palette(mat.$orange-palette, 700, 100, 800);
+$app-dark-warn: mat.define-palette(mat.$red-palette, 500, 500, 500);
+
+$app-dark-theme: mat.define-dark-theme(
+  $app-dark-primary,
+  $app-dark-accent,
+  $app-dark-warn
+);
+
+.dark-theme {
+  @include mat.all-component-themes($app-dark-theme);
+}

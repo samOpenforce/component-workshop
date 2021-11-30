@@ -2,4 +2,39 @@
   <div class="header-title">
     <a [routerLink]="'/home'" class="workshop-primary">component workshop</a>
   </div>
+  <div class="controls-container">
+    <div class="theme-control">
+      <div class="theme-icon">
+        <mat-icon color="accent">brightness_5</mat-icon>
+      </div>
+      <mat-slide-toggle
+        color="primary"
+        (change)="onThemeChange($event)"
+        [checked]="isDarkMode"
+      >
+      </mat-slide-toggle>
+      <div class="theme-icon"><mat-icon>brightness_4</mat-icon></div>
+    </div>
+    <div class="language-control ml-24">
+      <button mat-button [matMenuTriggerFor]="langMenu">
+        {{ "languages.language" | translate }}
+      </button>
+      <mat-menu #langMenu="matMenu">
+        <button
+          mat-menu-item
+          (click)="handleSetLang('en')"
+          [class.active]="currentLang === 'en'"
+        >
+          {{ "languages.en" | translate }}
+        </button>
+        <button
+          mat-menu-item
+          (click)="handleSetLang('de')"
+          [class.active]="currentLang === 'de'"
+        >
+          {{ "languages.de" | translate }}
+        </button>
+      </mat-menu>
+    </div>
+  </div>
 </div>

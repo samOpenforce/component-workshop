@@ -1,8 +1,22 @@
+@import "colors";
+
 div.header-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
   & div.header-title {
     margin-left: 24px;
     font-size: 24px;
+  }
+  & div.controls-container {
+    margin-right: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    & div.theme-control {
+      display: flex;
+      flex-direction: row;
+    }
   }
 }
