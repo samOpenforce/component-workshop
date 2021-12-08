@@ -1,0 +1,28 @@
+@import "../../../styles/colors";
+
+form {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+.option-row {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  min-height: 64px !important;
+  & .option-text {
+    display: flex;
+    flex: 1;
+  }
+  & .option-icon-container,
+  .selected-icon-container {
+    min-height: 64px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+  }
+}

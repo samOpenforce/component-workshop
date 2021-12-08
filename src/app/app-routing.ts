@@ -4,5 +4,6 @@ export class AppRouting {
     HOME: 'home',
 
     TEXT_INPUT: 'text-input',
+    SELECT: 'select',
   };
 }

@@ -23,7 +23,9 @@ import { MatListModule } from '@angular/material/list';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
 import { ValidationErrorComponent } from './shared/validation-error/validation-error.component';
+import { AutocompleteSelectComponent } from './shared/autocomplete-select/autocomplete-select.component';
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -39,6 +41,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     NumberInputComponent,
     SelectComponent,
     ValidationErrorComponent,
+    AutocompleteSelectComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +65,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MatSlideToggleModule,
     MatMenuModule,
     MatIconModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

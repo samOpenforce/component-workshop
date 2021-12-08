@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRouting } from './app-routing';
 import { HomeComponent } from './screens/home/home.component';
 import { PageNotFoundComponent } from './screens/page-not-found/page-not-found.component';
+import { SelectComponent } from './screens/select/select.component';
 import { TextInputComponent } from './screens/text-input/text-input.component';
 
 const routes: Routes = [
@@ -20,6 +21,11 @@ const routes: Routes = [
     path: AppRouting.PATH.TEXT_INPUT,
     pathMatch: 'full',
     component: TextInputComponent,
+  },
+  {
+    path: AppRouting.PATH.SELECT,
+    pathMatch: 'full',
+    component: SelectComponent,
   },
   { path: '**', component: PageNotFoundComponent },
 ];

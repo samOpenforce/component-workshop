@@ -1,1 +1,23 @@
-<p>select works!</p>
+<div class="screen-container">
+  <form novalidate [formGroup]="selectFormGroup" class="form-reset">
+    <div class="workshop-row mb-24">
+      <div class="info-col mat-h3">Autocomplete select box</div>
+      <div class="control-col">
+        <div class="control-container test">
+          <app-autocomplete-select
+            [formGroup]="selectFormGroup"
+            [allOptions]="options"
+            class="component-fill"
+          ></app-autocomplete-select>
+        </div>
+      </div>
+      <div class="values-col">
+        <pre>
+Current value: {{ getControl.selectedOption.value }}  
+Errors: {{ getControl.selectedOption.errors | json }}
+        </pre>
+      </div>
+    </div>
+    <mat-divider inset="false"></mat-divider>
+  </form>
+</div>

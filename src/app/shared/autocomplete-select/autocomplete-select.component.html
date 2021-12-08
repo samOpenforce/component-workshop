@@ -1,0 +1,59 @@
+<form [formGroup]="form" class="form-container">
+  <mat-form-field appearance="outline">
+    <mat-label>I AM LABEL</mat-label>
+    <mat-select
+      (opened)="handleFocusOnOpen()"
+      (closed)="clearInputAndFilter($event)"
+      (valueChange)="handleSelectionChange($event)"
+      formControlName="selectedOption"
+      floatLabel="always"
+      panelClass="autocomplete-select"
+    >
+      <mat-select-trigger>
+        <!-- TODO store selected as object to return multiple display values -->
+        <span>{{ getControl.selectedOption?.value }} </span>
+      </mat-select-trigger>
+      <div fxLayoutAlign="center center" class="ml-8 mr-8 input-container">
+        <input
+          #stringInput
+          matInput
+          type="text"
+          (keydown)="$event.stopPropagation()"
+          (keyup)="handleInputChange($event)"
+          class="select-search"
+          autocomplete="off"
+          placeholder="Type to filter"
+        />
+        <mat-icon
+          *ngIf="stringInput.value.length > 0"
+          class="mr-8"
+          matSuffix
+          (click)="clearInputAndFilter($event)"
+          >close</mat-icon
+        >
+      </div>
+      <mat-divider></mat-divider>
+
+      <mat-option
+        *ngFor="let option of options; let i = index"
+        [value]="option.value"
+      >
+        <span class="option-row">
+          <div class="option-text">
+            {{ option.displayName }}
+          </div>
+          <div class="option-text">{{ option.value }}</div>
+          <span class="selected-icon-container"
+            ><mat-icon *ngIf="option.value === getControl.selectedOption.value"
+              >done</mat-icon
+            >
+          </span>
+        </span>
+      </mat-option>
+    </mat-select>
+    <mat-error
+      validationError
+      [control]="getControl.selectedOption"
+    ></mat-error>
+  </mat-form-field>
+</form>
