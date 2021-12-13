@@ -1,0 +1,19 @@
+div.footer-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  min-height: 64px;
+}
+
+.col {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0px 24px;
+}
+
+.footer-links {
+  font-size: 8px;
+  white-space: nowrap;
+}

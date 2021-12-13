@@ -1,0 +1,56 @@
+@import "colors";
+
+div.dialog-container {
+  display: flex;
+  flex-direction: column;
+}
+
+div.dialog-header-container {
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 16px 0px 16px;
+}
+
+div.dialog-header-title {
+  height: 64px;
+  font-weight: 700;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+}
+
+div.dialog-header-close-container {
+  margin-top: -4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 48px;
+  height: 64px;
+  & .mat-icon {
+    margin-top: 6px;
+    margin-left: 2px;
+    height: 32px !important;
+    width: 32px !important;
+    font-size: 32px !important;
+  }
+}
+
+div.dialog-message-container {
+  padding: 24px 16px;
+  //min-height: 64px;
+  display: flex;
+  align-items: flex-start;
+}
+
+div.dialog-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 16px;
+}

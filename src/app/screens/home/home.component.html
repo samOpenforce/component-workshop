@@ -1,10 +1,42 @@
 <div class="screen-container">
-  <mat-nav-list role="list">
-    <mat-list-item role="listitem"
-      ><a [routerLink]="'/text-input'">text input</a></mat-list-item
-    >
-    <mat-list-item role="listitem"
-      ><a [routerLink]="'/select'">select</a></mat-list-item
-    >
-  </mat-nav-list>
+  <div class="intro-container">
+    <div class="page-header-container mt-24 mb-24">
+      <div class="mat-display-2 m0">Hello</div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="mt-24 mb-24">
+      <mat-list>
+        <a
+          *ngFor="let screen of screens"
+          [routerLink]="'/' + screen.route"
+          class="workshop-primary"
+        >
+          <div class="link-content-container">
+            <div>{{ screen.displayName }}</div>
+            <div><mat-icon>chevron_right</mat-icon></div>
+          </div>
+        </a>
+        <a (click)="openRightSideDrawer()" class="workshop-primary">
+          <div class="link-content-container">
+            <div>Right side drawer</div>
+            <div><mat-icon>chevron_right</mat-icon></div>
+          </div>
+        </a>
+      </mat-list>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="mt-24 mb-24">
+      <p>
+        <strong>Disclaimer:</strong> none of the solutions here are offered as
+        perfect, best practice or even correct. Some of them, for this example
+        application, are the simplest they could be.
+      </p>
+      <p>
+        Additionally, some will be completely experimental whilst others serve
+        as a notepad of sorts, used to iterate on approaches that have worked
+        well for projects so far.
+      </p>
+    </div>
+    <mat-divider></mat-divider>
+  </div>
 </div>

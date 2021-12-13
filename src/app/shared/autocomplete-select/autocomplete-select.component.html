@@ -11,7 +11,16 @@
     >
       <mat-select-trigger>
         <!-- TODO store selected as object to return multiple display values -->
-        <span>{{ getControl.selectedOption?.value }} </span>
+        <span
+          *ngIf="
+            !getControl.selectedOption?.value ||
+            getControl.selectedOption?.value === ''
+          "
+          >I AM PLACEHOLDER</span
+        >
+        <span *ngIf="getControl.selectedOption?.value"
+          >{{ getControl.selectedOption?.value }}
+        </span>
       </mat-select-trigger>
       <div fxLayoutAlign="center center" class="ml-8 mr-8 input-container">
         <input

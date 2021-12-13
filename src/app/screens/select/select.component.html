@@ -1,7 +1,7 @@
 <div class="screen-container">
-  <form novalidate [formGroup]="selectFormGroup" class="form-reset">
+  <form novalidate [formGroup]="selectFormGroup" class="form-reset mt-24">
     <div class="workshop-row mb-24">
-      <div class="info-col mat-h3">Autocomplete select box</div>
+      <div class="info-col mat-h3">Autocomplete select</div>
       <div class="control-col">
         <div class="control-container test">
           <app-autocomplete-select
@@ -13,11 +13,29 @@
       </div>
       <div class="values-col">
         <pre>
-Current value: {{ getControl.selectedOption.value }}  
+Current value: {{ getControl.selectedOption.value | json }}  
 Errors: {{ getControl.selectedOption.errors | json }}
         </pre>
       </div>
     </div>
-    <mat-divider inset="false"></mat-divider>
+    <div class="workshop-row mb-24">
+      <div class="info-col mat-h3">Autocomplete multiselect</div>
+      <div class="control-col">
+        <div class="control-container test">
+          <app-autocomplete-multiselect
+            [formGroup]="selectFormGroup"
+            [allOptions]="options"
+            class="component-fill"
+          ></app-autocomplete-multiselect>
+        </div>
+      </div>
+      <div class="values-col">
+        <pre>
+Current value: {{ getControl.selectedOptions.value | json }}  
+Errors: {{ getControl.selectedOptions.errors | json }}
+          </pre
+        >
+      </div>
+    </div>
   </form>
 </div>

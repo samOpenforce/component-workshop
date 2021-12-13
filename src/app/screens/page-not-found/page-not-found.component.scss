@@ -1,0 +1,11 @@
+@import "colors";
+
+div.link-container {
+  display: flex;
+  flex-direction: row;
+}
+
+a.back-link {
+  text-decoration: none;
+  color: $black-2;
+}

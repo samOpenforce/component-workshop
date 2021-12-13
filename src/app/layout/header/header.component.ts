@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { TranslateService } from '@ngx-translate/core';
+import { SideDrawerService } from '../../services/side-drawer.service';
 import { ThemeService, ThemeType } from '../../services/theme.service';
 
 @Component({
@@ -12,6 +13,7 @@ export class HeaderComponent implements OnInit {
   isDarkMode!: boolean;
 
   constructor(
+    private sideDrawerService: SideDrawerService,
     private themeService: ThemeService,
     private translate: TranslateService
   ) {}
@@ -39,5 +41,13 @@ export class HeaderComponent implements OnInit {
 
   get currentLang(): string {
     return this.translate.currentLang;
+  }
+
+  public toggleLeftDrawer(): void {
+    this.sideDrawerService.emitLeftChange(!this.sideDrawerService.leftOpen);
+  }
+
+  public toggleRightDrawer(): void {
+    this.sideDrawerService.emitRightChange(!this.sideDrawerService.rightOpen);
   }
 }

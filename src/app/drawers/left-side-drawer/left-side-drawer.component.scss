@@ -1,0 +1,17 @@
+div.left-drawer-container {
+  min-width: 328px;
+  & div.drawer-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    padding: 0px 8px 0px 24px;
+  }
+  & div.drawer-content {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    flex-direction: column;
+  }
+}

@@ -40,7 +40,7 @@ export class AutocompleteSelectComponent implements OnInit {
     this.options = this.allOptions;
 
     this.form = <FormGroup>this.controlContainer.control;
-    this.selectedOption = new FormControl('', [Validators.required]);
+    this.selectedOption = new FormControl(undefined, [Validators.required]);
 
     this.form.addControl('selectedOption', this.selectedOption);
   }

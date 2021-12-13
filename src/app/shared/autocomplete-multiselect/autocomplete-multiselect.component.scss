@@ -1,0 +1,90 @@
+@import "colors";
+
+form {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+.mat-option.red {
+  & .mat-primary .mat-pseudo-checkbox-checked {
+    background-color: $red !important;
+  }
+  &:hover {
+    background-color: rgba($red, 0.2);
+  }
+}
+
+.mat-option.blue:hover {
+  background-color: rgba($blue, 0.2);
+}
+.mat-option.orange:hover {
+  background-color: rgba($orange, 0.2);
+}
+.mat-option.green:hover {
+  background-color: rgba($green, 0.2);
+}
+
+.mat-option.mat-focus-indicator {
+  background-color: transparent;
+}
+
+.inner-option-row {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+
+  & .option-text {
+    display: flex;
+    flex: 1;
+  }
+  & .option-icon-container,
+  .selected-icon-container {
+    min-height: 64px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+  }
+}
+
+.mat-suffix > mat-icon {
+  height: 12px;
+  width: 12px;
+}
+
+.mat-chip.red {
+  background-color: red;
+  font-size: 10px;
+}
+
+.option-row {
+  max-height: 42px;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  width: 100%;
+  padding: 0px;
+  & .mat-option {
+    width: 100%;
+  }
+}
+
+.color-band {
+  width: 8px;
+  min-height: 42px;
+  height: 100%;
+  &.red {
+    background-color: $red;
+  }
+  &.orange {
+    background-color: $orange;
+  }
+  &.blue {
+    background-color: $blue;
+  }
+  &.green {
+    background-color: $green;
+  }
+}

@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormGroup } from '@angular/forms';
 
 import { TextInputComponent } from './text-input.component';
 
@@ -8,9 +9,9 @@ describe('TextInputComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TextInputComponent ]
-    })
-    .compileComponents();
+      providers: [FormGroup],
+      declarations: [TextInputComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

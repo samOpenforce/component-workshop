@@ -1,0 +1,18 @@
+.right-drawer-container {
+  width: 900px;
+}
+
+div.drawer-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  padding: 0px 16px 0px 16px;
+}
+div.drawer-content {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+}

@@ -6,7 +6,7 @@
       </div>
       <div class="control-col">
         <div class="control-container">
-          <mat-form-field floatLabel="always">
+          <mat-form-field floatLabel="always" appearance="outline">
             <mat-label>Name</mat-label>
             <input
               matInput
@@ -27,18 +27,21 @@
       </div>
       <div class="values-col">
         <div class="errors-object">
-          <pre>errors: {{ getControl.name?.errors | json }}</pre>
+          <pre>
+Current value: {{ getControl.name?.value | json }}
+errors: {{ getControl.name?.errors | json }}</pre
+          >
         </div>
       </div>
     </div>
-    <mat-divider inset="false"></mat-divider>
+
     <div class="workshop-row mt-24">
       <div class="info-col mat-h3">
         Text input also using a custom validator
       </div>
       <div class="control">
         <div class="control-container">
-          <mat-form-field floatLabel="always">
+          <mat-form-field floatLabel="always" appearance="outline">
             <mat-label>Email</mat-label>
             <input
               matInput
@@ -59,18 +62,12 @@
       </div>
       <div class="values-col">
         <div class="errors-object">
-          <pre>errors: {{ getControl.email?.errors | json }}</pre>
+          <pre>
+Current value: {{ getControl.email?.value | json }} 
+errors: {{ getControl.email?.errors | json }}</pre
+          >
         </div>
       </div>
     </div>
-    <!--     <div class="workshop-row mb-24">
-      <div class="info-col mat-h3"></div>
-      <div class="control">
-        <div class="control-container">
-          <button mat-flat-button color="primary">submit</button>
-        </div>
-      </div>
-      <div class="values-col"></div>
-    </div> -->
   </form>
 </div>

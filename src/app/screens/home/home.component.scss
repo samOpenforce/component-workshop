@@ -1,0 +1,15 @@
+.intro-container {
+  padding: 24px 16px;
+}
+
+.page-header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 600px) {
+  .page-header-container {
+    flex-direction: column;
+  }
+}

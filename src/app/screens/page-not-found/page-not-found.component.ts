@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { AppRouting } from '../../app-routing';
 
 @Component({
   selector: 'app-page-not-found',
@@ -6,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-not-found.component.scss'],
 })
 export class PageNotFoundComponent implements OnInit {
-  constructor() {}
+  ROUTING_PATH = AppRouting.PATH;
+
+  address = '';
+  addressSub!: Subscription;
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
-    console.log('eslint says no to empty lifecycle methods');
+    this.address = this.router.url;
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.address = this.router.url;
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.addressSub) {
+      this.addressSub.unsubscribe();
+    }
   }
 }

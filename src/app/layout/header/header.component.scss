@@ -3,11 +3,25 @@
 
 div.header-container {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  & div.header-title {
+  & div.left-header-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  & div.right-header-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  & div.left-drawer-trigger {
     margin-left: 24px;
+    width: 64px;
+  }
+  & div.header-title {
     font-size: 24px;
   }
   & div.controls-container {
@@ -20,4 +34,21 @@ div.header-container {
       flex-direction: row;
     }
   }
+}
+
+@media screen and (max-width: 600px) {
+  div.header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  div.right-header-group {
+    margin-left: 24px;
+    justify-content: space-between;
+  }
+}
+
+.lang-switch {
+  min-width: 96px;
 }

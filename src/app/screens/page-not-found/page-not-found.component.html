@@ -1,1 +1,18 @@
-<p>page-not-found works!</p>
+<div class="screen-container">
+  <h1>{{ "page-not-found.header" | translate }}</h1>
+  <p
+    [innerHTML]="
+      'page-not-found.description' | translate: { address: address || '' }
+    "
+  ></p>
+  <p [innerHTML]="'page-not-found.hint' | translate"></p>
+  <br />
+  <a [routerLink]="'/' + ROUTING_PATH.HOME" class="back-link">
+    <div class="link-container">
+      <div class="icon-container">
+        <mat-icon inline="true">chevron_left</mat-icon>
+      </div>
+      <div>{{ "common.back-to-home" | translate }}</div>
+    </div>
+  </a>
+</div>

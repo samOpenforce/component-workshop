@@ -1,11 +1,20 @@
 <div class="header-container">
-  <div class="header-title">
-    <a [routerLink]="'/home'" class="workshop-primary">component workshop</a>
+  <div class="left-header-group">
+    <div class="left-drawer-trigger">
+      <button mat-icon-button (click)="toggleLeftDrawer()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <div class="header-title">
+      <a [routerLink]="'/home'" class="workshop-primary header"
+        >component workshop</a
+      >
+    </div>
   </div>
-  <div class="controls-container">
+  <div class="right-header-group controls-container">
     <div class="theme-control">
-      <div class="theme-icon">
-        <mat-icon color="accent">brightness_5</mat-icon>
+      <div class="theme-icon mr-8">
+        <mat-icon color="primary">brightness_5</mat-icon>
       </div>
       <mat-slide-toggle
         color="primary"
@@ -13,10 +22,15 @@
         [checked]="isDarkMode"
       >
       </mat-slide-toggle>
-      <div class="theme-icon"><mat-icon>brightness_4</mat-icon></div>
+      <div class="theme-icon ml-8"><mat-icon>brightness_4</mat-icon></div>
     </div>
     <div class="language-control ml-24">
-      <button mat-button [matMenuTriggerFor]="langMenu">
+      <button
+        mat-button
+        color="accent"
+        [matMenuTriggerFor]="langMenu"
+        class="lang-switch"
+      >
         {{ "languages.language" | translate }}
       </button>
       <mat-menu #langMenu="matMenu">

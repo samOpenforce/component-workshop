@@ -29,20 +29,24 @@ export class SelectComponent implements OnInit {
     {
       displayName: 'some',
       value: 'SO',
+      class: 'red',
     },
     {
       displayName: 'many',
       value: 'MA',
+      class: 'blue',
     },
     {
       displayName: 'none',
       value: 'NO',
+      class: 'orange',
     },
     {
       displayName: 'all',
       value: 'AL',
+      class: 'green',
     },
-    {
+    /*   {
       displayName: 'far',
       value: 'FA',
     },
@@ -57,7 +61,7 @@ export class SelectComponent implements OnInit {
     {
       displayName: 'away',
       value: 'AW',
-    },
+    }, */
   ];
 
   constructor(private formBuilder: FormBuilder) {}

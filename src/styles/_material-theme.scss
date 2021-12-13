@@ -1,13 +1,11 @@
-@use "@angular/material" as mat;
-
 @include mat.core();
 
 // TODO typography
 // TODO custom palettes
 
 // Light theme
-$app-primary: mat.define-palette(mat.$green-palette, 500, 100, 800);
-$app-accent: mat.define-palette(mat.$orange-palette, 700, 100, 800);
+$app-primary: mat.define-palette(mat.$orange-palette, 500, 100, 800);
+$app-accent: mat.define-palette(mat.$blue-palette, 700, 100, 800);
 $app-warn: mat.define-palette(mat.$red-palette, 500, 500, 500);
 
 $app-light-theme: mat.define-light-theme($app-primary, $app-accent, $app-warn);
@@ -15,8 +13,8 @@ $app-light-theme: mat.define-light-theme($app-primary, $app-accent, $app-warn);
 @include mat.all-component-themes($app-light-theme);
 
 // Dark theme
-$app-dark-primary: mat.define-palette(mat.$green-palette, 500, 100, 800);
-$app-dark-accent: mat.define-palette(mat.$orange-palette, 700, 100, 800);
+$app-dark-primary: mat.define-palette(mat.$orange-palette, 500, 100, 800);
+$app-dark-accent: mat.define-palette(mat.$blue-palette, 700, 100, 800);
 $app-dark-warn: mat.define-palette(mat.$red-palette, 500, 500, 500);
 
 $app-dark-theme: mat.define-dark-theme(

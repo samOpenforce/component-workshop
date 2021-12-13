@@ -22,7 +22,7 @@ export class TextInputComponent implements OnInit {
       name: [null, [Validators.minLength(4), Validators.required]],
       email: [
         null,
-        [Validators.email, stringMatch('tree@forest'), Validators.required],
+        [Validators.required, Validators.email, stringMatch('tree@forest')],
       ],
     });
   }

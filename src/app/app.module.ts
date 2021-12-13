@@ -26,8 +26,21 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { ValidationErrorComponent } from './shared/validation-error/validation-error.component';
 import { AutocompleteSelectComponent } from './shared/autocomplete-select/autocomplete-select.component';
+import { AutocompleteMultiselectComponent } from './shared/autocomplete-multiselect/autocomplete-multiselect.component';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { LeftSideDrawerComponent } from './drawers/left-side-drawer/left-side-drawer.component';
+import { RightSideDrawerComponent } from './drawers/right-side-drawer/right-side-drawer.component';
+import { MatRippleModule } from '@angular/material/core';
+import { InfoDialogComponent } from './shared/info-dialog/info-dialog.component';
+import { ActivityDialogComponent } from './shared/activity-dialog/activity-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { FooterComponent } from './layout/footer/footer.component';
+import { FileInputComponent } from './screens/file-input/file-input.component';
 
-// required for AOT compilation
+// required for ngx-translate AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -42,6 +55,13 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     SelectComponent,
     ValidationErrorComponent,
     AutocompleteSelectComponent,
+    AutocompleteMultiselectComponent,
+    LeftSideDrawerComponent,
+    RightSideDrawerComponent,
+    InfoDialogComponent,
+    ActivityDialogComponent,
+    FooterComponent,
+    FileInputComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,8 +86,13 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MatMenuModule,
     MatIconModule,
     MatSelectModule,
+    MatChipsModule,
+    MatSidenavModule,
+    MatRippleModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatProgressSpinnerModule,
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

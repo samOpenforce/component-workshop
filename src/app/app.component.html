@@ -1,4 +1,29 @@
-<div class="mat-app-background app-container">
-  <app-header></app-header>
-  <router-outlet></router-outlet>
+<div class="mat-app-background">
+  <mat-drawer-container (backdropClick)="closeDrawers()" class="app-container">
+    <mat-drawer
+      mode="over"
+      position="start"
+      class="drawer-container left"
+      autoFocus="false"
+      restoreFocus="false"
+      [opened]="isLeftDrawerOpen"
+      ><app-left-side-drawer></app-left-side-drawer
+    ></mat-drawer>
+    <mat-drawer-content class="all-layout-content">
+      <app-header></app-header>
+      <div class="main-content">
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer></app-footer
+    ></mat-drawer-content>
+    <mat-drawer
+      mode="over"
+      position="end"
+      class="drawer-container right"
+      autoFocus="false"
+      restoreFocus="false"
+      [opened]="isRightDrawerOpen"
+      ><app-right-side-drawer></app-right-side-drawer
+    ></mat-drawer>
+  </mat-drawer-container>
 </div>

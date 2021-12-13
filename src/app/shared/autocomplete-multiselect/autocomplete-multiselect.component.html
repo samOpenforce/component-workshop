@@ -1,0 +1,84 @@
+<form [formGroup]="form" class="form-container">
+  <mat-form-field appearance="outline" floatLabel="always">
+    <mat-label>I AM LABEL</mat-label>
+    <mat-select
+      (opened)="handleFocusOnOpen()"
+      (closed)="clearInputAndFilter($event)"
+      (valueChange)="handleSelectionChange($event)"
+      formControlName="selectedOptions"
+      floatLabel="always"
+      panelClass="autocomplete-select"
+      multiple
+      disableRipple
+      placeholder="I AM PLACEHOLDER"
+    >
+      <mat-select-trigger>
+        <span *ngIf="getControl.selectedOptions?.value.length > 0">
+          <mat-chip-list>
+            <mat-chip
+              *ngFor="
+                let option of getControl.selectedOptions.value;
+                let i = index
+              "
+              [ngClass]="option.class"
+            >
+              {{ option.displayName }}
+              <button matChipRemove (click)="removeSelectedOption(i)">
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </mat-chip>
+          </mat-chip-list>
+        </span>
+      </mat-select-trigger>
+      <div fxLayoutAlign="center center" class="ml-8 mr-8 input-container">
+        <input
+          #stringInput
+          matInput
+          type="text"
+          (keydown)="$event.stopPropagation()"
+          (keyup)="handleInputChange($event)"
+          class="select-search"
+          autocomplete="off"
+          placeholder="Type to filter"
+        />
+        <mat-icon
+          *ngIf="stringInput.value.length > 0"
+          class="mr-8"
+          matSuffix
+          (click)="clearInputAndFilter($event)"
+          >close</mat-icon
+        >
+      </div>
+      <mat-divider></mat-divider>
+      <div
+        *ngFor="let option of options; let i = index"
+        class="option-row"
+        matRipple
+      >
+        <div
+          *ngIf="option.class"
+          class="color-band"
+          [ngClass]="option.class"
+        ></div>
+        <mat-option [value]="option" disableRipple [ngClass]="option.class">
+          <span class="inner-option-row" [ngClass]="option.class">
+            <div class="option-text ml-16">
+              {{ option.displayName }}
+            </div>
+            <div class="option-text">{{ option.value }}</div>
+            <span class="selected-icon-container"
+              ><mat-icon
+                *ngIf="option.value === getControl.selectedOptions.value"
+                >done</mat-icon
+              >
+            </span>
+          </span>
+        </mat-option>
+      </div>
+    </mat-select>
+    <mat-error
+      validationError
+      [control]="getControl.selectedOptions"
+    ></mat-error>
+  </mat-form-field>
+</form>

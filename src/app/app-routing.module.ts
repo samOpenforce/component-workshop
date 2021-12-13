@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRouting } from './app-routing';
 import { HomeComponent } from './screens/home/home.component';
+import { NumberInputComponent } from './screens/number-input/number-input.component';
 import { PageNotFoundComponent } from './screens/page-not-found/page-not-found.component';
 import { SelectComponent } from './screens/select/select.component';
 import { TextInputComponent } from './screens/text-input/text-input.component';
@@ -21,6 +22,11 @@ const routes: Routes = [
     path: AppRouting.PATH.TEXT_INPUT,
     pathMatch: 'full',
     component: TextInputComponent,
+  },
+  {
+    path: AppRouting.PATH.NUMBER_INPUT,
+    pathMatch: 'full',
+    component: NumberInputComponent,
   },
   {
     path: AppRouting.PATH.SELECT,

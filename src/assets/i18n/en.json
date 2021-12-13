@@ -5,8 +5,21 @@
     "email": "Email address",
     "yes": "Yes",
     "no": "No",
+    "ok": "OK",
     "continue": "Continue",
     "back": "Back",
-    "submit": "Submit"
+    "submit": "Submit",
+    "back-to-home": "Back to home"
+  },
+  "languages": {
+    "language": "Language",
+    "en": "English",
+    "de": "Deutsch"
+  },
+  "page-not-found": {
+    "title": "Page not found",
+    "header": "404 - Page not found",
+    "description": "A page at <strong>{{address}}</code></strong> could not be found.",
+    "hint": "Please check the URL and try again."
   }
 }

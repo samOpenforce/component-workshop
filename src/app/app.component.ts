@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
+import { SideDrawerService } from './services/side-drawer.service';
 import { ThemeService, ThemeType } from './services/theme.service';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
+@UntilDestroy()
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,7 +17,13 @@ export class AppComponent implements OnInit {
   private storedLanguage = localStorage.getItem('workshop-user-lang');
   private userLanguage = '';
   private userTheme = localStorage.getItem('workshop-user-theme');
+
+  title = 'component-workshop';
+  //LAYOUT
+  isLeftDrawerOpen = false;
+  isRightDrawerOpen = false;
   constructor(
+    private sideDrawerService: SideDrawerService,
     private translate: TranslateService,
     private themeService: ThemeService
   ) {}
@@ -40,5 +49,26 @@ export class AppComponent implements OnInit {
         localStorage.setItem('workshop-user-lang', event.lang);
       }
     );
+
+    /* LEFT SIDE DRAWER */
+    this.sideDrawerService.leftChangeEmitted$
+      .pipe(untilDestroyed(this))
+      .subscribe((change: any) => {
+        this.isLeftDrawerOpen = change;
+        this.sideDrawerService.leftOpen = change;
+      });
+
+    /* RIGHT SIDE DRAWER DISPL*/
+    this.sideDrawerService.rightChangeEmitted$
+      .pipe(untilDestroyed(this))
+      .subscribe((change: any) => {
+        this.isRightDrawerOpen = change;
+        this.sideDrawerService.rightOpen = change;
+      });
+  }
+
+  public closeDrawers(): void {
+    this.sideDrawerService.emitLeftChange(false);
+    this.sideDrawerService.emitRightChange(false);
   }
 }

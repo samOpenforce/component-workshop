@@ -1,3 +1,14 @@
+@use "@angular/material" as mat;
+
+$white: #ffffff;
+$black-1: #333333;
+$black-2: #75787b;
+
+$red: mat.get-color-from-palette(mat.$red-palette, 500);
+$orange: mat.get-color-from-palette(mat.$orange-palette, 500);
+$blue: mat.get-color-from-palette(mat.$blue-palette, 500);
+$green: mat.get-color-from-palette(mat.$green-palette, 500);
+
 $grey-1: #999999;
 $grey-2: #cccccc;
 $grey-3: #e6e6e6;

@@ -1,0 +1,51 @@
+<div class="screen-container">
+  <form [formGroup]="accountNumberForm" novalidate class="form-reset">
+    <div class="workshop-row mb-24">
+      <div class="info-col mat-h3">Number input</div>
+      <div class="control-col">
+        <div class="control-container">
+          <mat-form-field floatLabel="always" appearance="outline">
+            <mat-label>Account Number</mat-label>
+            <input
+              matInput
+              type="number"
+              formControlName="accountNumber"
+              placeholder="Enter account number"
+              data-test="account-number-input"
+              autocomplete="off"
+              autocapitalize="off"
+              (keydown)="suppressNegatives($event)"
+            />
+            <mat-error
+              validationError
+              [control]="getControl.accountNumber"
+              [testSelector]="'account-number-input-error'"
+            >
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="values-col">
+        <div class="errors-object">
+          <pre>
+  Current value: {{ getControl.accountNumber?.value | json }}
+  errors: {{ getControl.accountNumber?.errors | json }}</pre
+          >
+        </div>
+      </div>
+    </div>
+    <div class="workshop-row mb-24">
+      <div class="info-col mat-h3">Number display</div>
+      <div class="control-col">
+        <div class="control-container">
+          <div class="number-display">
+            {{ getControl.accountNumber?.value | number: "1.2-2" }}
+          </div>
+        </div>
+      </div>
+      <div class="values-col">
+        <div class="errors-object"></div>
+      </div>
+    </div>
+  </form>
+</div>

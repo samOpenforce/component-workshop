@@ -1,0 +1,46 @@
+<div
+  class="dialog-container"
+  [attr.data-test]="
+    data.testSelector ? data.testSelector : 'confirmation-dialog'
+  "
+>
+  <div class="dialog-header-container">
+    <div class="dialog-header-title">{{ data.titleKey | translate }}</div>
+    <div class="dialog-header-close-container">
+      <button
+        mat-icon-button
+        class="close-icon-button"
+        aria-label="Close confirmation dialog."
+        color="primary"
+        (click)="close(false)"
+      >
+        <mat-icon aria-hidden="false" aria-label="add" color="primary"
+          >close</mat-icon
+        >
+      </button>
+    </div>
+  </div>
+  <mat-divider [inset]="false"></mat-divider>
+
+  <div class="dialog-message-container">
+    <div [innerHTML]="data.messageKey | translate"></div>
+  </div>
+  <mat-divider [inset]="false"></mat-divider>
+  <div class="dialog-button-container">
+    <div>
+      <button
+        mat-flat-button
+        color="primary"
+        [class.destructive]="data?.destructive"
+        (click)="confirm()"
+        data-test="confirm-dialog-confirm"
+      >
+        {{
+          data.confirmKey
+            ? (data.confirmKey | translate)
+            : ("common.ok" | translate)
+        }}
+      </button>
+    </div>
+  </div>
+</div>
