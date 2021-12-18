@@ -21,5 +21,13 @@
     "header": "404 - Page not found",
     "description": "A page at <strong>{{address}}</code></strong> could not be found.",
     "hint": "Please check the URL and try again."
+  },
+  "dialogs": {
+    "confirm-dialog": {
+      "unsaved-changes": {
+        "title": "You have unsaved changes",
+        "text": "If you continue these changes will be lost. <br><br>Do you wish to continue?"
+      }
+    }
   }
 }

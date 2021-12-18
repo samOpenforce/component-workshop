@@ -10,35 +10,54 @@
       <button
         mat-icon-button
         class="close-icon-button"
-        aria-label="Close confirmation dialog."
+        [attr.aria-label]="
+          'dashboard.confirmation-dialog.aria-close-dialog' | translate
+        "
         color="primary"
         (click)="close(false)"
       >
-        <mat-icon aria-hidden="false" aria-label="add" color="primary"
+        <mat-icon
+          aria-hidden="false"
+          [attr.aria-label]="'common.aria-labels.close' | translate"
+          color="primary"
           >close</mat-icon
         >
       </button>
     </div>
   </div>
-  <mat-divider [inset]="false"></mat-divider>
-
+  <mat-divider></mat-divider>
   <div class="dialog-message-container">
     <div [innerHTML]="data.messageKey | translate"></div>
   </div>
   <mat-divider [inset]="false"></mat-divider>
-  <div class="dialog-buttons-container end">
-    <div>
+  <div class="dialog-buttons-container between">
+    <div class="button-container start">
+      <button
+        mat-stroked-button
+        color="primary"
+        type="button"
+        (click)="cancel()"
+        data-test="confirm-dialog-cancel-button"
+      >
+        {{
+          data.cancelKey
+            ? (data.cancelKey | translate)
+            : ("common.no" | translate)
+        }}
+      </button>
+    </div>
+    <div class="button-container end">
       <button
         mat-flat-button
         color="primary"
         [class.destructive]="data?.destructive"
         (click)="confirm()"
-        data-test="confirm-dialog-confirm"
+        data-test="confirm-dialog-confirm-button"
       >
         {{
           data.confirmKey
             ? (data.confirmKey | translate)
-            : ("common.ok" | translate)
+            : ("common.yes" | translate)
         }}
       </button>
     </div>

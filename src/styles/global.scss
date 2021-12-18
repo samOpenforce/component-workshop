@@ -2,6 +2,8 @@
 @import "material-theme";
 @import "colors";
 @import "spacing";
+@import "workshop-mat-button";
+@import "workshop-mat-input";
 @import "workshop-mat-dialog";
 @import "workshop-mat-chip";
 
@@ -42,6 +44,7 @@ div.screen-container {
 div.control-container {
   min-width: 300px;
   max-width: 300px;
+  min-height: 104px;
   display: flex;
   & mat-form-field {
     width: 100%;
@@ -52,7 +55,7 @@ div.values-col {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 div.errors-object {
   display: flex;

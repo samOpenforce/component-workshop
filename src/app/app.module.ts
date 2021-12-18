@@ -39,6 +39,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FooterComponent } from './layout/footer/footer.component';
 import { FileInputComponent } from './screens/file-input/file-input.component';
+import { CanDeactivateComponent } from './screens/can-deactivate/can-deactivate.component';
+import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
 
 // required for ngx-translate AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -62,6 +64,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     ActivityDialogComponent,
     FooterComponent,
     FileInputComponent,
+    CanDeactivateComponent,
+    ConfirmDialogComponent,
   ],
   imports: [
     BrowserModule,

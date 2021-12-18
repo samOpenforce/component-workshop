@@ -27,6 +27,7 @@
     "@ngneat/until-destroy": "^9.0.0",
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
+    "ngx-numeral": "0.0.1-beta.0",
     "normalize.css": "^8.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",

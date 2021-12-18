@@ -7,6 +7,7 @@ import {
 } from '@angular/material/snack-bar';
 
 import { ActivityDialogComponent } from '../shared/activity-dialog/activity-dialog.component';
+import { ConfirmDialogComponent } from '../shared/confirm-dialog/confirm-dialog.component';
 // import { ConfirmationDialogComponent } from '../shared/confirmation-dialog/confirmation-dialog.component'
 import { InfoDialogComponent } from '../shared/info-dialog/info-dialog.component';
 // import { SnackbarDialogComponent } from '../shared/snackbar-dialog/snackbar-dialog.component'
@@ -72,7 +73,7 @@ export class DialogService {
   } */
 
   // CONFIRMATION
-  /*  public async openConfirmation(
+  public async openConfirmation(
     options: AppConfirmOptions,
     confirmedAction?: (result: any) => void
   ): Promise<void> {
@@ -80,7 +81,7 @@ export class DialogService {
     if (options.panelClass) {
       panelClasses.push(options.panelClass);
     }
-    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: {
         titleKey: options.titleKey,
         messageKey: options.messageKey,
@@ -102,7 +103,7 @@ export class DialogService {
     });
 
     await dialogRef.afterClosed().toPromise();
-  } */
+  }
 
   // INFO
   public openInfo(options: AppConfirmOptions): void {

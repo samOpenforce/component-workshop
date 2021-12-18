@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
     { displayName: 'Text Input', route: AppRouting.PATH.TEXT_INPUT },
     { displayName: 'Number Input', route: AppRouting.PATH.NUMBER_INPUT },
     { displayName: 'Select', route: AppRouting.PATH.SELECT },
+    { displayName: 'canDeactivate', route: AppRouting.PATH.CAN_DEACTIVATE },
   ];
   constructor(private sideDrawerService: SideDrawerService) {}
 
