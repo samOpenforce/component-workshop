@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 import { DialogService } from '../../services/dialog.service';
 import { SideDrawerService } from '../../services/side-drawer.service';
 
@@ -48,7 +49,8 @@ export class LeftSideDrawerComponent implements OnInit {
   constructor(
     private sideDrawerService: SideDrawerService,
     private formBuilder: FormBuilder,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private translate: TranslateService
   ) {}
 
   ngOnInit(): void {

@@ -1,30 +1,23 @@
 import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import {
-  TranslateFakeLoader,
-  TranslateLoader,
-  TranslateModule,
-  TranslateService,
-} from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
+import { of } from 'rxjs';
 import { AppComponent } from './app.component';
 import { MockTranslatePipe } from './utils/mock-translate.pipe';
+
+export class TranslateServiceStub {
+  public get(key: any): any {
+    return of(key);
+  }
+}
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        HttpClientModule,
-        TranslateModule.forRoot({
-          loader: {
-            provide: TranslateLoader,
-            useClass: TranslateFakeLoader,
-          },
-        }),
-      ],
+      imports: [RouterTestingModule, HttpClientModule],
       declarations: [AppComponent, MockTranslatePipe],
-      providers: [TranslateService],
+      providers: [{ provide: TranslateService, useClass: TranslateServiceStub }],
     }).compileComponents();
   });
 

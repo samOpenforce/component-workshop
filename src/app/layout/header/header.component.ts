@@ -35,6 +35,7 @@ export class HeaderComponent implements OnInit {
   }
 
   handleSetLang(locale: string): void {
+    console.log(locale);
     this.translate.use(locale);
     localStorage.setItem('workshop-user-lang', locale);
   }

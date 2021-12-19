@@ -6,9 +6,7 @@
       </button>
     </div>
     <div class="header-title">
-      <a [routerLink]="'/home'" class="workshop-primary header"
-        >component workshop</a
-      >
+      <a [routerLink]="'/home'" class="workshop-primary header">component workshop</a>
     </div>
   </div>
   <div class="right-header-group controls-container">
@@ -16,37 +14,20 @@
       <div class="theme-icon mr-8">
         <mat-icon color="primary">brightness_5</mat-icon>
       </div>
-      <mat-slide-toggle
-        color="primary"
-        (change)="onThemeChange($event)"
-        [checked]="isDarkMode"
-      >
+      <mat-slide-toggle color="primary" (change)="onThemeChange($event)" [checked]="isDarkMode">
       </mat-slide-toggle>
       <div class="theme-icon ml-8"><mat-icon>brightness_4</mat-icon></div>
     </div>
     <div class="language-control ml-24">
-      <button
-        mat-button
-        color="accent"
-        [matMenuTriggerFor]="langMenu"
-        class="lang-switch"
-      >
-        {{ "languages.language" | translate }}
+      <button mat-button color="accent" [matMenuTriggerFor]="langMenu" class="lang-switch">
+        {{ 'languages.language' | translate }}
       </button>
       <mat-menu #langMenu="matMenu">
-        <button
-          mat-menu-item
-          (click)="handleSetLang('en')"
-          [class.active]="currentLang === 'en'"
-        >
-          {{ "languages.en" | translate }}
+        <button mat-menu-item (click)="handleSetLang('en')" [class.active]="currentLang === 'en'">
+          {{ 'languages.en' | translate }}
         </button>
-        <button
-          mat-menu-item
-          (click)="handleSetLang('de')"
-          [class.active]="currentLang === 'de'"
-        >
-          {{ "languages.de" | translate }}
+        <button mat-menu-item (click)="handleSetLang('de')" [class.active]="currentLang === 'de'">
+          {{ 'languages.de' | translate }}
         </button>
       </mat-menu>
     </div>

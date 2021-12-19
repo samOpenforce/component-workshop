@@ -40,9 +40,7 @@ export class AppComponent implements OnInit {
       : this.themeService.themeChange(ThemeType.DEFAULT);
 
     // init language
-    this.userLanguage = this.storedLanguage
-      ? this.storedLanguage
-      : this.browserLanguage;
+    this.userLanguage = this.storedLanguage ? this.storedLanguage : this.browserLanguage;
 
     if (this.userLanguage === 'de') {
       this.translate.use('de');
@@ -50,27 +48,22 @@ export class AppComponent implements OnInit {
       this.translate.use('en');
     }
 
-    this.langSub = this.translate.onLangChange.subscribe(
-      (event: LangChangeEvent) => {
-        localStorage.setItem('workshop-user-lang', event.lang);
-      }
-    );
+    this.langSub = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      console.log('langChange in app component');
+      localStorage.setItem('workshop-user-lang', event.lang);
+    });
 
     /* LEFT SIDE DRAWER */
-    this.sideDrawerService.leftChangeEmitted$
-      .pipe(untilDestroyed(this))
-      .subscribe((change: any) => {
-        this.isLeftDrawerOpen = change;
-        this.sideDrawerService.leftOpen = change;
-      });
+    this.sideDrawerService.leftChangeEmitted$.pipe(untilDestroyed(this)).subscribe((change: any) => {
+      this.isLeftDrawerOpen = change;
+      this.sideDrawerService.leftOpen = change;
+    });
 
     /* RIGHT SIDE DRAWER DISPL*/
-    this.sideDrawerService.rightChangeEmitted$
-      .pipe(untilDestroyed(this))
-      .subscribe((change: any) => {
-        this.isRightDrawerOpen = change;
-        this.sideDrawerService.rightOpen = change;
-      });
+    this.sideDrawerService.rightChangeEmitted$.pipe(untilDestroyed(this)).subscribe((change: any) => {
+      this.isRightDrawerOpen = change;
+      this.sideDrawerService.rightOpen = change;
+    });
   }
 
   public closeDrawers(): void {
