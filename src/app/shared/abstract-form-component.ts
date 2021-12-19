@@ -13,21 +13,9 @@ export abstract class AbstractFormComponent {
   protected constructor(protected dialogService: DialogService) {}
 
   /**
-   * overwrites to get if form has changes
+   * parent overwrites form change state
    */
   abstract hasFormChanges(): boolean;
-
-  /**
-   * User can overwrite to return different options that are used by the confirm dialog
-   */
-  protected getFormConfirmDialogOptions(): DialogServiceOptions {
-    return {
-      titleKey: 'dialogs.confirm-dialog.unsaved-changes.title',
-      messageKey: 'dialogs.confirm-dialog.unsaved-changes.text',
-      cancelKey: 'common.no',
-      continueKey: 'common.yes',
-    };
-  }
 
   /**
    * called by the FormComponentDeactivateGuard - shows a confirmation dialog if hasFormChanges() returns true
@@ -39,8 +27,6 @@ export abstract class AbstractFormComponent {
         {
           titleKey: 'dialogs.confirm-dialog.unsaved-changes.title',
           messageKey: 'dialogs.confirm-dialog.unsaved-changes.text',
-          cancelKey: 'common.no',
-          // continueKey: 'common.yes',
         },
         (result: boolean) => {
           canDeactivate = result;

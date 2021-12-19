@@ -26,7 +26,7 @@
     "confirm-dialog": {
       "unsaved-changes": {
         "title": "You have unsaved changes",
-        "text": "If you continue these changes will be lost. <br><br>Do you wish to continue?"
+        "text": "If you continue these changes will be lost. <br> <br>Do you wish to continue?"
       }
     }
   }

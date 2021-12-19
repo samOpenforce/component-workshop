@@ -41,6 +41,8 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { FileInputComponent } from './screens/file-input/file-input.component';
 import { CanDeactivateComponent } from './screens/can-deactivate/can-deactivate.component';
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
+import { TemplateNumberFormatPipe } from './shared/template-number-format.pipe';
+import { InputNumberFormatDirective } from './shared/input-number-format.directive';
 
 // required for ngx-translate AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -66,6 +68,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     FileInputComponent,
     CanDeactivateComponent,
     ConfirmDialogComponent,
+    TemplateNumberFormatPipe,
+    InputNumberFormatDirective,
   ],
   imports: [
     BrowserModule,

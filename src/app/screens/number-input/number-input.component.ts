@@ -11,12 +11,8 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 import { stringMatch } from '../../shared/WorkshopValidators';
-
-// locale handling
-import { registerLocaleData } from '@angular/common';
-import localeEnAu from '@angular/common/locales/en-AU';
-import localeDeAt from '@angular/common/locales/de-AT';
 
 @Component({
   selector: 'app-number-input',
@@ -25,18 +21,17 @@ import localeDeAt from '@angular/common/locales/de-AT';
 })
 export class NumberInputComponent implements OnInit {
   accountNumberForm!: FormGroup;
+
   constructor(
     private formBuilder: FormBuilder,
-    private cd: ChangeDetectorRef
+    private cd: ChangeDetectorRef,
+    public translateService: TranslateService
   ) {}
 
   ngOnInit(): void {
     this.accountNumberForm = this.formBuilder.group({
       accountNumber: [null, [Validators.minLength(4), Validators.required]],
     });
-
-    registerLocaleData(localeEnAu);
-    registerLocaleData(localeDeAt);
   }
 
   get getControl(): {

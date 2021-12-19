@@ -4,7 +4,10 @@ import { Subscription } from 'rxjs';
 import { SideDrawerService } from './services/side-drawer.service';
 import { ThemeService, ThemeType } from './services/theme.service';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-
+// locale handling
+import { registerLocaleData } from '@angular/common';
+import localeEn from '@angular/common/locales/en-AU';
+import localeDe from '@angular/common/locales/de-AT';
 @UntilDestroy()
 @Component({
   selector: 'app-root',
@@ -29,6 +32,9 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    registerLocaleData(localeEn);
+    registerLocaleData(localeDe);
+
     this.userTheme === ThemeType.DARK
       ? this.themeService.themeChange(ThemeType.DARK)
       : this.themeService.themeChange(ThemeType.DEFAULT);

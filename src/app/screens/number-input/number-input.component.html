@@ -8,7 +8,8 @@
             <mat-label>Account Number</mat-label>
             <input
               matInput
-              type="number"
+              inputNumberFormat
+              type="text"
               formControlName="accountNumber"
               placeholder="Enter account number"
               data-test="account-number-input"
@@ -39,7 +40,10 @@
       <div class="control-col">
         <div class="control-container">
           <div class="number-display">
-            {{ getControl.accountNumber?.value | number: "1.2-2" }}
+            {{
+              getControl.accountNumber?.value
+                | templateNumberFormat: translateService.currentLang:false
+            }}
           </div>
         </div>
       </div>

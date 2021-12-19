@@ -8,17 +8,26 @@
     "ok": "OK",
     "continue": "Weiter",
     "back": "Züruck",
-    "submit": "Submit"
-  },
-  "page-not-found": {
-    "title": "Page not found",
-    "header": "404 - Page not found",
-    "description": "A page at <strong>{{address}}</code></strong> could not be found.",
-    "hint": "Please check the URL and try again."
+    "submit": "Absenden",
+    "back-to-home": "Zurück nach Hause"
   },
   "languages": {
-    "language": "Sprache",
+    "language": "Language",
     "en": "English",
     "de": "Deutsch"
+  },
+  "page-not-found": {
+    "title": "Seite nicht gefunden",
+    "header": "404",
+    "description": "Eine Seite unter <strong>{{address}}</code></strong> konnte nicht gefunden werden.",
+    "hint": "Bitte überprüfen Sie die URL und versuchen Sie es erneut."
+  },
+  "dialogs": {
+    "confirm-dialog": {
+      "unsaved-changes": {
+        "title": "Sie haben ungespeicherte Änderungen",
+        "text": "Wenn Sie fortfahren, gehen diese Änderungen verloren. <br><br>Möchten Sie fortfahren?"
+      }
+    }
   }
 }
