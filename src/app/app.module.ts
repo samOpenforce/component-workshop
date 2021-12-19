@@ -43,6 +43,7 @@ import { CanDeactivateComponent } from './screens/can-deactivate/can-deactivate.
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
 import { TemplateNumberFormatPipe } from './shared/template-number-format.pipe';
 import { InputNumberFormatDirective } from './shared/input-number-format.directive';
+import { MockTranslatePipe } from './utils/mock-translate.pipe';
 
 // required for ngx-translate AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -70,6 +71,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     ConfirmDialogComponent,
     TemplateNumberFormatPipe,
     InputNumberFormatDirective,
+    MockTranslatePipe,
   ],
   imports: [
     BrowserModule,

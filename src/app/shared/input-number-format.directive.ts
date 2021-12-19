@@ -11,7 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { parseFormattedInputString } from '../utils/StringUtils';
 
 @Directive({
-  selector: '[inputNumberFormat]',
+  selector: '[appInputNumberFormat]',
   providers: [
     {
       provide: MAT_INPUT_VALUE_ACCESSOR,

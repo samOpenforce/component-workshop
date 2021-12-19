@@ -6,7 +6,7 @@ import { DialogService } from '../services/dialog.service';
  * Abstract form component that to be used in combination with the FormComponentDeactivateGuard
  */
 @Component({
-  selector: 'nxlr-abstract-form',
+  selector: 'app-abstract-form',
   template: '<span></span>',
 })
 export abstract class AbstractFormComponent {

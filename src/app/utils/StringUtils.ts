@@ -1,4 +1,4 @@
-//used by number format directive
+// used by number format directive
 export const parseFormattedInputString = (value: string): number => {
   const simpleString = value
     .split(/\D/)

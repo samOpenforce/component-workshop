@@ -3,13 +3,12 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-file-input',
   templateUrl: './file-input.component.html',
-  styleUrls: ['./file-input.component.scss']
+  styleUrls: ['./file-input.component.scss'],
 })
 export class FileInputComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    console.log('no empty lifecycles');
   }
-
 }

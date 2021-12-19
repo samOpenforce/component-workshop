@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MockTranslatePipe } from '../../utils/mock-translate.pipe';
 
 import { PageNotFoundComponent } from './page-not-found.component';
 
@@ -8,9 +10,9 @@ describe('PageNotFoundComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageNotFoundComponent ]
-    })
-    .compileComponents();
+      imports: [RouterTestingModule],
+      declarations: [PageNotFoundComponent, MockTranslatePipe],
+    }).compileComponents();
   });
 
   beforeEach(() => {

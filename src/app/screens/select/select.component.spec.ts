@@ -1,4 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AutocompleteMultiselectComponent } from '../../shared/autocomplete-multiselect/autocomplete-multiselect.component';
+import { AutocompleteSelectComponent } from '../../shared/autocomplete-select/autocomplete-select.component';
 
 import { SelectComponent } from './select.component';
 
@@ -8,9 +14,18 @@ describe('SelectComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SelectComponent ]
-    })
-    .compileComponents();
+      declarations: [
+        SelectComponent,
+        AutocompleteMultiselectComponent,
+        AutocompleteSelectComponent,
+      ],
+      imports: [
+        BrowserAnimationsModule,
+        ReactiveFormsModule,
+        MatSelectModule,
+        MatFormFieldModule,
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {

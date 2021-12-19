@@ -13,8 +13,8 @@
       </div>
       <div class="values-col">
         <pre>
-Current value: {{ getControl.selectedOption.value | json }}  
-Errors: {{ getControl.selectedOption.errors | json }}
+Current value: {{ getControl.selectedOption?.value | json }}  
+Errors: {{ getControl.selectedOption?.errors | json }}
         </pre>
       </div>
     </div>
@@ -31,8 +31,8 @@ Errors: {{ getControl.selectedOption.errors | json }}
       </div>
       <div class="values-col">
         <pre>
-Current value: {{ getControl.selectedOptions.value | json }}  
-Errors: {{ getControl.selectedOptions.errors | json }}
+Current value: {{ getControl.selectedOptions?.value | json }}  
+Errors: {{ getControl.selectedOptions?.errors | json }}
           </pre
         >
       </div>

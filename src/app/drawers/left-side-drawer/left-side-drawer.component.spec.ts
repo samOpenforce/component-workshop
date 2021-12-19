@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { LeftSideDrawerComponent } from './left-side-drawer.component';
 
@@ -8,9 +11,14 @@ describe('LeftSideDrawerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LeftSideDrawerComponent ]
-    })
-    .compileComponents();
+      declarations: [LeftSideDrawerComponent],
+      imports: [ReactiveFormsModule],
+      providers: [
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+        { provide: MatDialog, useValue: {} },
+        { provide: MatSnackBar, useValue: {} },
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {
