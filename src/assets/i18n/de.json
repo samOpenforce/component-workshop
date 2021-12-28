@@ -9,11 +9,12 @@
     "continue": "Weiter",
     "back": "Züruck",
     "submit": "Absenden",
-    "back-to-home": "Zurück nach Hause"
+    "back-to-home": "Zurück nach Hause",
+    "page-title-prefix": "werkstatt"
   },
   "languages": {
-    "language": "Language",
-    "en": "English",
+    "language": "Sprache",
+    "en": "Englisch",
     "de": "Deutsch"
   },
   "page-not-found": {

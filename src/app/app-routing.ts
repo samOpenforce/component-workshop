@@ -7,5 +7,6 @@ export class AppRouting {
     NUMBER_INPUT: 'number-input',
     SELECT: 'select',
     CAN_DEACTIVATE: 'can-deactivate',
+    COLORS: 'colors',
   };
 }

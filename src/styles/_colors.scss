@@ -1,4 +1,4 @@
-@use "@angular/material" as mat;
+@use '@angular/material' as mat;
 
 $white: #ffffff;
 $black-1: #333333;
@@ -14,3 +14,57 @@ $grey-2: #cccccc;
 $grey-3: #e6e6e6;
 $grey-4: #f5f5f5;
 $grey-5: #fafafa;
+
+// Example: Set your color pallettes
+
+$blue-palette: mat.$blue-palette;
+$green-palette: mat.$green-palette;
+$orange-palette: mat.$orange-palette;
+$red-palette: mat.$red-palette;
+
+$colors: () !default;
+$colors: map-merge(
+  (
+    'blue': $blue-palette,
+    'green': $green-palette,
+    'orange': $orange-palette,
+    'red': $red-palette,
+  ),
+  $colors
+);
+
+$shades: (
+  '100': 100,
+  '200': 200,
+  '300': 300,
+  '400': 400,
+  '500': 500,
+  '600': 600,
+  '700': 700,
+  '800': 800,
+  '900': 900,
+);
+
+@each $key, $value in $colors {
+  .bg-#{$key} {
+    @each $shadeKey, $shadeValue in $shades {
+      &-#{$shadeKey} {
+        background-color: mat.get-color-from-palette($value, $shadeValue);
+      }
+    }
+  }
+  .text-#{$key} {
+    @each $shadeKey, $shadeValue in $shades {
+      &-#{$shadeKey} {
+        color: mat.get-color-from-palette($value, $shadeValue);
+      }
+    }
+  }
+  .border-#{$key} {
+    @each $shadeKey, $shadeValue in $shades {
+      &-#{$shadeKey} {
+        border: 1px solid mat.get-color-from-palette($value, $shadeValue);
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AppRouting } from '../../app-routing';
@@ -8,7 +8,7 @@ import { AppRouting } from '../../app-routing';
   templateUrl: './page-not-found.component.html',
   styleUrls: ['./page-not-found.component.scss'],
 })
-export class PageNotFoundComponent implements OnInit {
+export class PageNotFoundComponent implements OnInit, OnDestroy {
   ROUTING_PATH = AppRouting.PATH;
 
   address = '';

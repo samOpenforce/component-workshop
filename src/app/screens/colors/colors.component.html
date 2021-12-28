@@ -1,0 +1,53 @@
+<div class="screen-container">
+  <div class="workshop-row mx-24 mb-24">
+    <div class="info-col">
+      <div class="mat-h3">Colors</div>
+      <div>
+        <p>Experimenting with generating utility classes using scss</p>
+        <ul>
+          <li><code>bg-red-100</code></li>
+          <li><code>border-red-100</code></li>
+          <li><code>text-red-100</code></li>
+        </ul>
+      </div>
+    </div>
+    <div class="control-col">
+      <div class="control-container">
+        <div class="color-picker">
+          <div *ngFor="let color of colors" class="color-row">
+            <div
+              *ngFor="let shade of shades"
+              [ngClass]="'bg-' + color + '-' + shade"
+              class="color-square"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div class="control-container mt-24">
+        <div class="color-picker">
+          <div *ngFor="let color of colors" class="color-row">
+            <div
+              *ngFor="let shade of shades"
+              [ngClass]="'border-' + color + '-' + shade"
+              class="color-square"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div class="control-container mt-24">
+        <div class="color-picker">
+          <div *ngFor="let color of colors" class="color-row">
+            <div
+              *ngFor="let shade of shades"
+              [ngClass]="'text-' + color + '-' + shade"
+              class="color-square mat-caption"
+            >
+              TEXT
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="values-col"></div>
+  </div>
+</div>

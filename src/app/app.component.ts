@@ -8,6 +8,8 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { registerLocaleData } from '@angular/common';
 import localeEn from '@angular/common/locales/en-AU';
 import localeDe from '@angular/common/locales/de-AT';
+import { NavigationEnd, Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 @UntilDestroy()
 @Component({
   selector: 'app-root',
@@ -28,7 +30,9 @@ export class AppComponent implements OnInit {
   constructor(
     private sideDrawerService: SideDrawerService,
     private translate: TranslateService,
-    private themeService: ThemeService
+    private themeService: ThemeService,
+    private titleService: Title,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -59,11 +63,26 @@ export class AppComponent implements OnInit {
       this.sideDrawerService.leftOpen = change;
     });
 
-    /* RIGHT SIDE DRAWER DISPL*/
+    /* RIGHT SIDE DRAWER */
     this.sideDrawerService.rightChangeEmitted$.pipe(untilDestroyed(this)).subscribe((change: any) => {
       this.isRightDrawerOpen = change;
       this.sideDrawerService.rightOpen = change;
     });
+
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.updatePageTitle();
+      }
+    });
+  }
+
+  private updatePageTitle(): void {
+    const currentTitleKey = this.router.routerState.root.snapshot.firstChild?.data?.pageTitle;
+    let newTitle = this.translate.instant('common.page-title-prefix');
+    if (currentTitleKey) {
+      newTitle = newTitle + ' | ' + this.translate.instant(currentTitleKey);
+    }
+    this.titleService.setTitle(newTitle);
   }
 
   public closeDrawers(): void {

@@ -9,7 +9,8 @@
     "continue": "Continue",
     "back": "Back",
     "submit": "Submit",
-    "back-to-home": "Back to home"
+    "back-to-home": "Back to home",
+    "page-title-prefix": "workshop"
   },
   "languages": {
     "language": "Language",
