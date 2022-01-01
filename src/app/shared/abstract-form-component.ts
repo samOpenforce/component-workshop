@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { DialogServiceOptions } from '../models/DialogServiceOptions';
 import { DialogService } from '../services/dialog.service';
 
@@ -11,6 +11,18 @@ import { DialogService } from '../services/dialog.service';
 })
 export abstract class AbstractFormComponent {
   protected constructor(protected dialogService: DialogService) {}
+
+  /**
+   * only show browser refresh warning if form has changes
+   */
+  @HostListener('window:beforeunload', ['$event'])
+  beforeUnloadHander(event: BeforeUnloadEvent): boolean {
+    if (this.hasFormChanges()) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 
   /**
    * parent overwrites form change state

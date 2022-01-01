@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { SideDrawerService } from './services/side-drawer.service';
@@ -48,13 +48,16 @@ export class AppComponent implements OnInit {
 
     if (this.userLanguage === 'de') {
       this.translate.use('de');
+      this.updatePageTitle();
     } else {
       this.translate.use('en');
+      this.updatePageTitle();
     }
 
     this.langSub = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       console.log('langChange in app component');
       localStorage.setItem('workshop-user-lang', event.lang);
+      this.updatePageTitle();
     });
 
     /* LEFT SIDE DRAWER */
