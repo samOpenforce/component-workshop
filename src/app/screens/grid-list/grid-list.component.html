@@ -1,0 +1,17 @@
+<div fxLayout="row wrap" fxLayoutGap="16px grid" cdkDropListGroup>
+  <div
+    *ngFor="let item of list; let index = index"
+    fxFlex.gt-sm="25"
+    [fxFlex.gt-xs]="100 / 3"
+    fxFlex="50"
+    cdkDropList
+    cdkDropListOrientation="horizontal"
+    [cdkDropListData]="index"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <mat-card cdkDrag>
+      <mat-card-title>{{ item }}</mat-card-title>
+      <mat-card-subtitle>Hello world</mat-card-subtitle>
+    </mat-card>
+  </div>
+</div>

@@ -1,8 +1,9 @@
 <div class="screen-container">
   <form [formGroup]="loginForm" novalidate class="form-reset">
     <div class="workshop-row mb-24">
-      <div class="info-col mat-h3">
-        Text input using Angulars standard validators
+      <div class="info-col">
+        <span class="mat-h3">Text input using Angulars standard validators</span>
+        <p>Shows errors when touched</p>
       </div>
       <div class="control-col">
         <div class="control-container">
@@ -16,14 +17,11 @@
               autocomplete="off"
               autocapitalize="off"
             />
-            <mat-error
-              validationError
-              [control]="getControl.name"
-              [testSelector]="'login-name-input'"
-            >
+            <mat-error validationError [control]="getControl.name" [testSelector]="'login-name-input'">
             </mat-error>
           </mat-form-field>
         </div>
+        <button mat-flat-button color="primary" type="submit">Submit</button>
       </div>
       <div class="values-col">
         <div class="errors-object">
@@ -36,8 +34,9 @@ errors: {{ getControl.name?.errors | json }}</pre
     </div>
 
     <div class="workshop-row mt-24">
-      <div class="info-col mat-h3">
-        Text input also using a custom validator
+      <div class="info-col">
+        <span class="mat-h3">Text input also using a custom validator</span>
+        <p>Also, uses custom ErrorSateMatcher to show errors only when form is submitted</p>
       </div>
       <div class="control">
         <div class="control-container">
@@ -50,12 +49,9 @@ errors: {{ getControl.name?.errors | json }}</pre
               data-test="login-email-input"
               autocomplete="off"
               autocapitalize="off"
+              [errorStateMatcher]="submittedMatcher"
             />
-            <mat-error
-              validationError
-              [control]="getControl.email"
-              [testSelector]="'login-email-input'"
-            >
+            <mat-error validationError [control]="getControl.email" [testSelector]="'login-email-input'">
             </mat-error>
           </mat-form-field>
         </div>

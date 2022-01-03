@@ -31,7 +31,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { LeftSideDrawerComponent } from './drawers/left-side-drawer/left-side-drawer.component';
 import { RightSideDrawerComponent } from './drawers/right-side-drawer/right-side-drawer.component';
-import { MatRippleModule } from '@angular/material/core';
+import { ErrorStateMatcher, MatRippleModule, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 import { InfoDialogComponent } from './shared/info-dialog/info-dialog.component';
 import { ActivityDialogComponent } from './shared/activity-dialog/activity-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -44,6 +44,9 @@ import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.c
 import { TemplateNumberFormatPipe } from './shared/template-number-format.pipe';
 import { InputNumberFormatDirective } from './shared/input-number-format.directive';
 import { ColorsComponent } from './screens/colors/colors.component';
+import { ShowErrorOnSubmitted, ShowErrorOnTouchedOrSubmitted } from './utils/workshop-ErrorStateMatchers';
+import { GridListComponent } from './screens/grid-list/grid-list.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 // required for ngx-translate AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -73,6 +76,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     TemplateNumberFormatPipe,
     InputNumberFormatDirective,
     ColorsComponent,
+    GridListComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,6 +90,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         deps: [HttpClient],
       },
     }),
+    FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
     MatDividerModule,
@@ -105,5 +110,11 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MatProgressSpinnerModule,
   ],
   bootstrap: [AppComponent],
+  providers: [
+    {
+      provide: ErrorStateMatcher,
+      useClass: ShowErrorOnTouchedOrSubmitted,
+    },
+  ],
 })
 export class AppModule {}

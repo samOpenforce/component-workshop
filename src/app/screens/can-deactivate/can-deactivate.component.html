@@ -3,12 +3,15 @@
     <div class="workshop-row mb-24">
       <div class="info-col">
         <span class="mat-h3"
-          >Using a canDeactivate guard to handle exiting a form:</span
+          >Using an abstract formComponent, window:beforeUnload event and a canDeactivate guard to handle
+          exiting a form:</span
         ><br />
         <br />
         <span
-          >To demonstrate, make changes to the form and then use refresh or
-          back/forward browser controls.</span
+          >1. Refreshing the page will only trigger the browsers built in refresh warning if the form has
+          changes.</span
+        ><br /><br /><span
+          >2. All other navigation will trigger the apps unsaved changes dialog if the form has changes.</span
         >
       </div>
 

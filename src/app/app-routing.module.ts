@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRouting } from './app-routing';
 import { CanDeactivateComponent } from './screens/can-deactivate/can-deactivate.component';
 import { ColorsComponent } from './screens/colors/colors.component';
+import { GridListComponent } from './screens/grid-list/grid-list.component';
 import { HomeComponent } from './screens/home/home.component';
 import { NumberInputComponent } from './screens/number-input/number-input.component';
 import { PageNotFoundComponent } from './screens/page-not-found/page-not-found.component';
@@ -58,6 +59,14 @@ const routes: Routes = [
     component: ColorsComponent,
     data: {
       pageTitle: 'colors',
+    },
+  },
+  {
+    path: AppRouting.PATH.GRID_LIST,
+    pathMatch: 'full',
+    component: GridListComponent,
+    data: {
+      pageTitle: 'grid-list',
     },
   },
   {

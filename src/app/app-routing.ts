@@ -8,5 +8,6 @@ export class AppRouting {
     SELECT: 'select',
     CAN_DEACTIVATE: 'can-deactivate',
     COLORS: 'colors',
+    GRID_LIST: 'grid-list',
   };
 }

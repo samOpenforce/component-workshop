@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
     { displayName: 'Select', route: AppRouting.PATH.SELECT },
     { displayName: 'canDeactivate', route: AppRouting.PATH.CAN_DEACTIVATE },
     { displayName: 'Colors', route: AppRouting.PATH.COLORS },
+    { displayName: 'Draggable grid-list', route: AppRouting.PATH.GRID_LIST },
   ];
   constructor(private sideDrawerService: SideDrawerService) {}
 
