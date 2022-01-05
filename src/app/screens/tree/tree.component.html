@@ -1,5 +1,5 @@
-<div class="container mx-24 my-32">
-  <div class="col">
+<div fxFlex fxLayout="row" fxLayoutGap="24px">
+  <div fxLayout="column" class="tree">
     <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
       <!-- This is the tree node template for leaf nodes -->
       <!-- There is inline padding applied to this node using styles.
@@ -36,7 +36,7 @@
       </mat-nested-tree-node>
     </mat-tree>
   </div>
-  <div class="col">
+  <div fxLayout="column">
     <span class="mat-display-1">{{ selectedOption ? selectedSupplier?.name : 'No selection'}}</span>
     <div>{{ selectedSupplier?.id }}</div>
   </div>

@@ -25,27 +25,32 @@
   padding-left: 40px;
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
-}
-
-.col {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  max-width: 50%;
-}
-
-mat-tree {
+/* mat-tree {
   min-width: 100%;
+} */
+
+.example-tree {
+  flex: 1;
+}
+
+.tree {
+  min-width: 356px;
 }
 
 .selected {
   color: orange;
+  &::after {
+    content: '';
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    height: 8px;
+    width: 8px;
+    margin-left: 8px;
+    background-color: orange;
+  }
 }
 
 .mat-tree-node:hover {
-  background-color: roange;
+  cursor: default;
+  color: orange;
 }
