@@ -66,13 +66,28 @@ export class TreeComponent implements OnInit {
   hoveredOption = '';
   selectedOption: StepNode | undefined = undefined;
   selectedSupplier: TreeSupplier | undefined = undefined;
-
+  selectedSupplierAncestors: Array<any> | null = null;
   constructor() {
     this.dataSource.data = TREE_DATA;
   }
 
   hasChild = (_: number, node: StepNode) => !!node.children && node.children.length > 0;
 
+  getAncestors(array: Array<StepNode> | undefined, id: string): Array<any> | null {
+    if (typeof array !== 'undefined') {
+      for (let i = 0; i < array.length; i++) {
+        if (array[i].id === id) {
+          return [array[i]];
+        }
+        const a = this.getAncestors(array[i].children, id);
+        if (a !== null) {
+          a?.unshift(array[i]);
+          return a;
+        }
+      }
+    }
+    return null;
+  }
   ngOnInit(): void {
     console.log('tree onInit lifcycle');
   }
@@ -88,6 +103,7 @@ export class TreeComponent implements OnInit {
     console.log(node);
     this.selectedOption = node;
     this.setSelectedSupplier(node);
+    this.selectedSupplierAncestors = this.getAncestors(this.dataSource.data, node.id);
   }
 
   setSelectedSupplier(node: StepNode): void {

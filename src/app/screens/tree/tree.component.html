@@ -37,6 +37,11 @@
     </mat-tree>
   </div>
   <div fxLayout="column">
+    <div fxLayout="row">
+      <div *ngFor="let ancestor of selectedSupplierAncestors; let last = last">
+        <span *ngIf="!last">{{ ancestor.name }}</span>
+      </div>
+    </div>
     <span class="mat-display-1">{{ selectedOption ? selectedSupplier?.name : 'No selection'}}</span>
     <div>{{ selectedSupplier?.id }}</div>
   </div>
