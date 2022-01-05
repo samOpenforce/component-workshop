@@ -1,11 +1,11 @@
-@use "@angular/material" as mat;
-@import "material-theme";
-@import "colors";
-@import "spacing";
-@import "workshop-mat-button";
-@import "workshop-mat-input";
-@import "workshop-mat-dialog";
-@import "workshop-mat-chip";
+@use '@angular/material' as mat;
+@import 'material-theme';
+@import 'colors';
+@import 'spacing';
+@import 'workshop-mat-button';
+@import 'workshop-mat-input';
+@import 'workshop-mat-dialog';
+@import 'workshop-mat-chip';
 
 html,
 body {
@@ -13,7 +13,7 @@ body {
 }
 body {
   margin: 0;
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 16px;
   color: $black-1;
 }
@@ -186,4 +186,10 @@ a.workshop-primary {
     font-size: 16px;
     margin-top: 10px;
   }
+}
+app-sidenav {
+  display: flex;
+}
+mat-drawer-container {
+  flex: 1 1 auto;
 }

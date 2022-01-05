@@ -1,12 +1,20 @@
 .app-container {
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
 }
+
 .all-layout-content {
   display: flex;
   min-height: 100vh;
+  min-width: 100%;
   flex-direction: column;
 }
+
 .main-content {
+  display: flex;
   flex: 1;
-  flex-grow: 1;
+  margin: 32px auto;
+  width: 1440px;
+  max-width: 1440px;
 }

@@ -9,5 +9,6 @@ export class AppRouting {
     CAN_DEACTIVATE: 'can-deactivate',
     COLORS: 'colors',
     GRID_LIST: 'grid-list',
+    TREE: 'tree',
   };
 }

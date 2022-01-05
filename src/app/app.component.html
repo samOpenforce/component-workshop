@@ -11,11 +11,13 @@
     ></mat-drawer>
     <mat-drawer-content class="all-layout-content">
       <app-header></app-header>
+
       <div class="main-content">
         <router-outlet></router-outlet>
       </div>
-      <app-footer></app-footer
-    ></mat-drawer-content>
+
+      <app-footer fxFlexOffset="auto"></app-footer>
+    </mat-drawer-content>
     <mat-drawer
       mode="over"
       position="end"

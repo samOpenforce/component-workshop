@@ -9,6 +9,7 @@ import { NumberInputComponent } from './screens/number-input/number-input.compon
 import { PageNotFoundComponent } from './screens/page-not-found/page-not-found.component';
 import { SelectComponent } from './screens/select/select.component';
 import { TextInputComponent } from './screens/text-input/text-input.component';
+import { TreeComponent } from './screens/tree/tree.component';
 import { FormComponentDeactivateGuard } from './shared/form-component-deactivate.guard';
 
 const routes: Routes = [
@@ -67,6 +68,14 @@ const routes: Routes = [
     component: GridListComponent,
     data: {
       pageTitle: 'grid-list',
+    },
+  },
+  {
+    path: AppRouting.PATH.TREE,
+    pathMatch: 'full',
+    component: TreeComponent,
+    data: {
+      pageTitle: 'hierarchy tree',
     },
   },
   {

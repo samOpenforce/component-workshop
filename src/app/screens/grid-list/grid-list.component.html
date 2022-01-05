@@ -1,17 +1,23 @@
-<div fxLayout="row wrap" fxLayoutGap="16px grid" cdkDropListGroup>
-  <div
-    *ngFor="let item of list; let index = index"
-    fxFlex.gt-sm="25"
-    [fxFlex.gt-xs]="100 / 3"
-    fxFlex="50"
-    cdkDropList
-    cdkDropListOrientation="horizontal"
-    [cdkDropListData]="index"
-    (cdkDropListDropped)="drop($event)"
-  >
-    <mat-card cdkDrag>
-      <mat-card-title>{{ item }}</mat-card-title>
-      <mat-card-subtitle>Hello world</mat-card-subtitle>
-    </mat-card>
+<div fxFlex class="container">
+  <div fxFlex fxLayout="row" fxLayoutGap="24px" class="board">
+    <div *ngFor="let link of chain" fxFlex fxLayout="column" class="swimlane">
+      <h3>{{ link.title }}</h3>
+      <div
+        cdkDropList
+        #step="cdkDropList"
+        [cdkDropListData]="link.data"
+        [cdkDropListConnectedTo]="supplyChainSteps"
+        (cdkDropListDropped)="dropped($event)"
+        class="list"
+        fxFlex
+        fxLayout="column"
+        fxLayoutGap="24px"
+      >
+        <mat-card *ngFor="let item of link.data" cdkDrag>
+          <mat-card-title>{{ item }}</mat-card-title>
+          <mat-card-subtitle>Hello world</mat-card-subtitle>
+        </mat-card>
+      </div>
+    </div>
   </div>
 </div>

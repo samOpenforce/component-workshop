@@ -47,7 +47,11 @@ import { ColorsComponent } from './screens/colors/colors.component';
 import { ShowErrorOnSubmitted, ShowErrorOnTouchedOrSubmitted } from './utils/workshop-ErrorStateMatchers';
 import { GridListComponent } from './screens/grid-list/grid-list.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { TreeComponent } from './screens/tree/tree.component';
+import { MatTreeModule } from '@angular/material/tree';
 // required for ngx-translate AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -77,6 +81,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     InputNumberFormatDirective,
     ColorsComponent,
     GridListComponent,
+    TreeComponent,
   ],
   imports: [
     BrowserModule,
@@ -108,6 +113,10 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MatDialogModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
+    MatGridListModule,
+    MatCardModule,
+    DragDropModule,
+    MatTreeModule,
   ],
   bootstrap: [AppComponent],
   providers: [
